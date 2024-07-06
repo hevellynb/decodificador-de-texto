@@ -9,14 +9,15 @@
 </head>
 <body>
     <header>
-        <img src="assets/logo-alura.svg" alt="logo alura" id="logo">
+        <span><i class="fa fa-code" aria-hidden="true" style="font-size: 40px;"></i></span>
+        <a href="https://github.com/hevellynb/decodificador-de-texto"><i class="fa fa-github" aria-hidden="true" style="font-size: 60px;"></i></a>
     </header>
 
     <main class="conteudo">
         <section class="entrada-de-texto">
             
             <div class="texto-entrada">
-                <textarea id="textoEncriptar" placeholder="Digite seu texto" cols="38" rows="18"></textarea>
+                <textarea id="textoEncriptar" placeholder="Digite seu texto" cols="38" rows="21"></textarea>
             </div>
             </div>
             <div class="aviso">
@@ -41,7 +42,7 @@
 
             <div id="local-saida-de-texto">
                 <textarea id="textoEncriptado" cols="38" rows="21" readonly></textarea>
-                <button class="btn-copiar">Copiar</button>
+                <button id="btn-copiar">Copiar</button>
             </div>
         </section>
     </main>

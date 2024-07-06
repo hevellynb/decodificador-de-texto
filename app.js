@@ -1,6 +1,6 @@
 let btnCrip = document.querySelector(".criptografar")
 let btnDescrip = document.querySelector(".descriptografar")
-let btnCopy = document.querySelector(".btn-copiar")
+let btnCopy = document.querySelector("#btn-copiar")
 let textoAntes = document.querySelector("#textoEncriptar");
 let textoDepois = document.querySelector("#textoEncriptado");
 let codifica = {a:"ai", e:"enter", i:"imes", o:"ober", u:"ufat"};
@@ -24,7 +24,9 @@ btnDescrip.addEventListener("click", () => {
 btnCopy.addEventListener("click", async function(){
     await navigator.clipboard.writeText(textoDepois.value);
     textoDepois.innerHTML = "";
+    escondeBtnCopiar();
 });
+
 
 function criptografar() {
     let texto = textoAntes.value;
@@ -34,6 +36,7 @@ function criptografar() {
     });
 
     textoDepois.innerHTML = textoNovo;
+    mostraBtnCopiar();
 }
 
 function descriptografar() {
@@ -44,6 +47,7 @@ function descriptografar() {
     })
     
     textoDepois.innerHTML = textoNovo;
+    mostraBtnCopiar();
 }
 
 function escondeDepois() { 
@@ -56,4 +60,12 @@ function mostraDepois() {
 
 function limparElementos() {
     document.getElementById("antes").remove();
+}
+
+function mostraBtnCopiar() {
+    document.getElementById("btn-copiar").style.visibility = "visible";
+}
+
+function escondeBtnCopiar() {
+    document.getElementById("btn-copiar").style.visibility = "hidden";
 }
